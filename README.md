@@ -101,7 +101,7 @@ This allows the user to move the robot using keyboard inputs such as **W, A, S, 
 
 After the map is generated, Navigation2 is used to allow the robot to autonomously navigate to a goal location.
 
-![Navigation](images/navigation.png)
+<img width="100%" src="4th.png" />
 
 **Command**
 
