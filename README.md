@@ -205,8 +205,7 @@ Possible improvements for the project:
 
 # 👨‍💻 Author
 
-Developed as a robotics learning project focusing on **ROS2-based autonomous mobile robot navigation and simulation**.
-
+omkar maroti honrao
+B.tech Electrical engineering
 ---
 
-⭐ If you found this project useful, consider **starring the repository**.
