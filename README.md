@@ -1,135 +1,212 @@
-# ROS2-SLAM-and-Navigation2-simulation-using-Gazebo-and-RViz2-for-autonomous-mobile-robot-navigation.
-ROS2-based autonomous mobile robot simulation using SLAM Toolbox and Navigation2 for mapping and path planning in Gazebo with RViz2 visualization.
-# ROS2 SLAM and Navigation2 Autonomous Mobile Robot Simulation
+# 🤖 ROS2 SLAM & Navigation2 Autonomous Robot Simulation
 
-## Overview
+![ROS2](https://img.shields.io/badge/ROS2-Humble-blue)
+![Gazebo](https://img.shields.io/badge/Simulator-Gazebo-orange)
+![SLAM](https://img.shields.io/badge/SLAM-Toolbox-green)
+![Navigation2](https://img.shields.io/badge/Nav2-Navigation2-red)
+![License](https://img.shields.io/badge/License-MIT-yellow)
 
-This project demonstrates **autonomous mobile robot mapping and navigation using ROS2**. The system uses **SLAM Toolbox for real-time mapping** and **Navigation2 for autonomous path planning and navigation** in a simulated environment using **Gazebo**. Visualization and monitoring of the robot, sensors, and navigation path are performed using **RViz2**.
+🚀 **Autonomous Mobile Robot Simulation using ROS2, SLAM Toolbox, and Navigation2 in Gazebo with RViz2 visualization.**
 
-The robot first performs **Simultaneous Localization and Mapping (SLAM)** to build a map of an unknown environment. After the map is generated, **Navigation2** is used to plan and execute an autonomous path to reach a user-defined goal.
-
-This project demonstrates fundamental robotics concepts including **robot localization, mapping, path planning, and autonomous navigation**.
-
----
-
-## Technologies and Tools Used
-
-* **ROS2 Humble** – Robot Operating System framework for robotics development
-* **Gazebo Simulator** – 3D robotics simulation environment
-* **SLAM Toolbox** – Real-time mapping and localization
-* **Navigation2 (Nav2)** – Autonomous navigation framework for ROS2
-* **RViz2** – Visualization tool for robot state, sensors, and navigation
-* **Teleop Twist Keyboard** – Manual control of robot movement
+This project demonstrates how a mobile robot can **build a map of an unknown environment (SLAM)** and then **autonomously navigate to a goal location (Navigation2)** inside a Gazebo simulation environment.
 
 ---
 
-## System Workflow
+# 📌 Project Overview
 
-The project follows the following workflow:
+This project implements **autonomous navigation for a mobile robot using ROS2**.
 
-1. Launch the robot model in the Gazebo simulation environment.
-2. Start SLAM to build a map of the environment using sensor data.
-3. Manually control the robot using the keyboard to explore the environment.
-4. Save the generated map.
-5. Launch Navigation2 and set a target goal for autonomous navigation.
+The robot explores an environment, generates a map using **SLAM Toolbox**, and then navigates autonomously using **Navigation2 path planning algorithms**.
+
+The simulation is performed in **Gazebo**, while robot sensors, map data, and navigation paths are visualized using **RViz2**.
+
+### 🔑 Key Concepts Demonstrated
+
+* Simultaneous Localization and Mapping (SLAM)
+* Autonomous Robot Navigation
+* Path Planning and Obstacle Avoidance
+* Robot Simulation using Gazebo
+* Sensor Visualization using RViz2
 
 ---
 
-## Simulation
+# 🛠️ Technologies Used
 
-### 1. Robot Spawn in Gazebo
+| Technology                   | Description                        |
+| ---------------------------- | ---------------------------------- |
+| 🤖 **ROS2 Humble**           | Robotics middleware framework      |
+| 🌍 **Gazebo**                | 3D robotics simulation environment |
+| 🧭 **SLAM Toolbox**          | Real-time mapping and localization |
+| 🚗 **Navigation2 (Nav2)**    | Autonomous navigation stack        |
+| 📊 **RViz2**                 | Robot visualization and debugging  |
+| ⌨️ **Teleop Twist Keyboard** | Manual robot control               |
 
-The robot model is launched inside the Gazebo simulation environment.
+---
 
-### 🔹 Gazebo Simulation
+# ⚙️ System Workflow
+
+The project workflow follows these steps:
+
+1️⃣ Launch the robot in the Gazebo simulation environment
+2️⃣ Start SLAM to generate a map of the environment
+3️⃣ Control the robot manually using the keyboard
+4️⃣ Build a complete map of the environment
+5️⃣ Use Navigation2 to navigate the robot autonomously
+
+---
+
+# 💻 System Requirements
+
+Before running the project ensure the following software is installed:
+
+* Ubuntu 22.04
+* ROS2 Humble
+* Gazebo Simulator
+* SLAM Toolbox
+* Navigation2
+* RViz2
+
+Install dependencies:
+
+```
+sudo apt update
+sudo apt install ros-humble-navigation2
+sudo apt install ros-humble-nav2-bringup
+sudo apt install ros-humble-slam-toolbox
+sudo apt install ros-humble-teleop-twist-keyboard
+```
+
+---
+
+# 📂 Project Structure
+
+```
+ROS2-SLAM-Navigation2
+│
+├── README.md
+├── 1st.png
+├── 2nd.png
+├── 3rd.png
+├── 4th.png
+```
+
+---
+
+# 🖥️ Simulation Steps
+
+---
+
+## 1️⃣ Robot Spawn in Gazebo
+
+The robot model is launched in the Gazebo simulation environment.
+
+### 🌍 Gazebo Simulation
+
 <img width="100%" src="1st.png" />
+
+### ▶️ Command
 
 ```
 ros2 launch samplebot_description samplebot.launch.py use_sim_time:=True
 ```
 
-This command loads the robot description and spawns the robot in the Gazebo simulation world.
+This command loads the robot description and spawns the robot in the Gazebo world.
 
 ---
 
-### 2. SLAM Mapping
+## 2️⃣ SLAM Mapping
 
-SLAM Toolbox is used to generate a real-time map of the environment using sensor data such as LiDAR.
+The robot creates a real-time map using **SLAM Toolbox** while exploring the environment.
 
 <img width="100%" src="2nd.png" />
 
-**Command**
+### ▶️ Command
 
 ```
 ros2 launch bot_slam online_async_launch.py
 ```
 
-During this process, the robot continuously updates the map as it explores the environment.
+The robot continuously updates the map as it moves through the environment.
 
 ---
 
-### 3. Teleoperation Control
+## 3️⃣ Teleoperation Control
 
-The robot is manually controlled using keyboard commands to explore the environment and build a complete map.
+The robot is manually controlled using keyboard commands.
 
 <img width="100%" src="3rd.png" />
 
-
-**Command**
+### ▶️ Command
 
 ```
 ros2 run teleop_twist_keyboard teleop_twist_keyboard
 ```
 
-This allows the user to move the robot using keyboard inputs such as **W, A, S, D keys**.
+Keyboard keys such as **W, A, S, D** are used to control the robot movement.
 
 ---
 
-### 4. Autonomous Navigation
+## 4️⃣ Autonomous Navigation
 
-After the map is generated, Navigation2 is used to allow the robot to autonomously navigate to a goal location.
+Once the map is generated, the robot can autonomously navigate to a target location.
 
 <img width="100%" src="4th.png" />
 
-**Command**
+### ▶️ Command
 
 ```
 ros2 launch bot_nav navigation_launch.py
 ```
 
-Using RViz2, the user can set a **2D Navigation Goal**, and the robot will automatically plan and follow the optimal path to reach the target.
+Using RViz2, the user can set a **2D Navigation Goal**, and the robot automatically plans and follows the optimal path.
 
 ---
 
-## Features
+# ✨ Features
 
-* Real-time **SLAM mapping**
-* **Autonomous navigation using Navigation2**
-* **Gazebo simulation environment**
-* **Robot visualization using RViz2**
-* **Manual robot control using keyboard**
-* **Path planning and obstacle avoidance**
-
----
-
-## Applications
-
-This project demonstrates core concepts used in real-world robotics applications such as:
-
-* Autonomous warehouse robots
-* Service robots
-* Indoor navigation systems
-* Autonomous inspection robots
-* Robotics research and education
+✅ Real-time SLAM mapping
+✅ Autonomous navigation using Navigation2
+✅ Robot simulation in Gazebo
+✅ Visualization using RViz2
+✅ Manual control using keyboard teleoperation
+✅ Path planning and obstacle avoidance
 
 ---
 
-## Project Demonstration
+# 🚀 Applications
 
-A demonstration video of the project showing **SLAM mapping and autonomous navigation** is included in the repository.
+This project demonstrates technologies used in modern robotics systems such as:
+
+* 📦 Warehouse automation robots
+* 🤖 Service robots
+* 🏭 Industrial mobile robots
+* 🛰️ Autonomous inspection robots
+* 🎓 Robotics education and research
 
 ---
 
-## Author
+# 🎥 Project Demonstration
 
-Developed as part of a robotics learning project focusing on **ROS2-based autonomous mobile robot navigation**.
+A demo video of the project showing **SLAM mapping and autonomous navigation** is included in this repository.
+
+---
+
+# 📈 Future Improvements
+
+Possible improvements for the project:
+
+* Autonomous obstacle avoidance
+* Multi-robot navigation
+* Real robot implementation
+* Integration with ROS2 perception packages
+* Advanced path planning algorithms
+
+---
+
+# 👨‍💻 Author
+
+Developed as a robotics learning project focusing on **ROS2-based autonomous mobile robot navigation and simulation**.
+
+---
+
+⭐ If you found this project useful, consider **starring the repository**.
