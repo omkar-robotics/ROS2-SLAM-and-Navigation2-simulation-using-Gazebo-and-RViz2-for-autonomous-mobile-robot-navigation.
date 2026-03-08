@@ -44,18 +44,6 @@ The robot model is launched inside the Gazebo simulation environment.
 ### 🔹 Gazebo Simulation
 <img width="100%" src="1st.png" />
 
----
-🔹 SLAM Mapping
-<img width="100%" src="https://uploads.onecompiler.io/43pdbrrr7/44dv94y9j/Screenshot%20from%202026-02-17%2015-00-08.png" />
-
----
-
-### 🔹 Autonomous Navigation in RViz
-<img width="100%" src="https://uploads.onecompiler.io/43pdbrrr7/44dv94y9j/Screenshot%20from%202026-02-17%2015-01-27.png" />
----
-
-**Command**
-
 ```
 ros2 launch samplebot_description samplebot.launch.py use_sim_time:=True
 ```
