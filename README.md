@@ -84,7 +84,8 @@ During this process, the robot continuously updates the map as it explores the e
 
 The robot is manually controlled using keyboard commands to explore the environment and build a complete map.
 
-![Teleop Control](images/teleop_control.png)
+<img width="100%" src="3rd.png" />
+
 
 **Command**
 
