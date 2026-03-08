@@ -68,7 +68,7 @@ This command loads the robot description and spawns the robot in the Gazebo simu
 
 SLAM Toolbox is used to generate a real-time map of the environment using sensor data such as LiDAR.
 
-<img width="100%" src="https:2nd.png" />
+<img width="100%" src="2nd.png" />
 
 **Command**
 
