@@ -1,0 +1,194 @@
+<?xml version="1.0" ?>
+<robot name="samplebot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find samplebot_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find samplebot_description)/urdf/samplebot.trans" />
+<xacro:include filename="$(find samplebot_description)/urdf/samplebot.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="0.0 0.0 0.01870730688912165" rpy="0 0 0"/>
+    <mass value="8.12580936590343"/>
+    <inertia ixx="0.014001" iyy="0.02708" izz="0.039004" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find samplebot_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find samplebot_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lidar_1">
+  <inertial>
+    <origin xyz="5.026061718855929e-18 0.0 0.005000000000000011" rpy="0 0 0"/>
+    <mass value="0.2219535209761188"/>
+    <inertia ixx="5.2e-05" iyy="5.2e-05" izz="0.0001" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0 -0.0 -0.052" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find samplebot_description)/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0 -0.0 -0.052" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find samplebot_description)/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_frontw_1">
+  <inertial>
+    <origin xyz="0.0 -0.010000000000000023 0.0" rpy="0 0 0"/>
+    <mass value="0.4739940747956673"/>
+    <inertia ixx="0.00013" iyy="0.000228" izz="0.00013" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.075 0.08 -0.0175" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find samplebot_description)/meshes/right_frontw_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.075 0.08 -0.0175" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find samplebot_description)/meshes/right_frontw_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_frontw_1">
+  <inertial>
+    <origin xyz="0.0 0.009999999999999995 0.0" rpy="0 0 0"/>
+    <mass value="0.4739940747956673"/>
+    <inertia ixx="0.00013" iyy="0.000228" izz="0.00013" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.075 -0.08 -0.0175" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find samplebot_description)/meshes/left_frontw_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.075 -0.08 -0.0175" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find samplebot_description)/meshes/left_frontw_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_rearw_1">
+  <inertial>
+    <origin xyz="0.0 -0.010000000000000023 0.0" rpy="0 0 0"/>
+    <mass value="0.4739940747956673"/>
+    <inertia ixx="0.00013" iyy="0.000228" izz="0.00013" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.075 0.08 -0.0175" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find samplebot_description)/meshes/right_rearw_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.075 0.08 -0.0175" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find samplebot_description)/meshes/right_rearw_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_rearw_1">
+  <inertial>
+    <origin xyz="0.0 0.009999999999999995 0.0" rpy="0 0 0"/>
+    <mass value="0.4739940747956673"/>
+    <inertia ixx="0.00013" iyy="0.000228" izz="0.00013" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.075 -0.08 -0.0175" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find samplebot_description)/meshes/left_rearw_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.075 -0.08 -0.0175" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find samplebot_description)/meshes/left_rearw_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="camera_1">
+  <inertial>
+    <origin xyz="0.0049999999999999906 5.585809592645319e-17 0.009999999999999988" rpy="0 0 0"/>
+    <mass value="0.0176625"/>
+    <inertia ixx="1e-06" iyy="0.0" izz="0.0" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.1 -0.0 -0.0175" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find samplebot_description)/meshes/camera_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.1 -0.0 -0.0175" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find samplebot_description)/meshes/camera_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name=" lidarjoint" type="fixed">
+  <origin xyz="0.0 0.0 0.052" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="lidar_1"/>
+</joint>
+
+<joint name="front_rightjoint" type="continuous">
+  <origin xyz="0.075 -0.08 0.0175" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="right_frontw_1"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+</joint>
+
+<joint name="front_leftjoint" type="continuous">
+  <origin xyz="0.075 0.08 0.0175" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="left_frontw_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="rear_rightjoint" type="continuous">
+  <origin xyz="-0.075 -0.08 0.0175" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="right_rearw_1"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+</joint>
+
+<joint name="rear_leftjoint" type="continuous">
+  <origin xyz="-0.075 0.08 0.0175" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="left_rearw_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="camerajoint" type="fixed">
+  <origin xyz="0.1 0.0 0.0175" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="camera_1"/>
+</joint>
+
+</robot>
