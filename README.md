@@ -206,7 +206,8 @@ Possible improvements for the project:
 # 👨‍💻 Author
 
 omkar maroti honrao
-Robotics reasearch intern 
+
+(Robotics reasearch intern)
 
 ---
 
